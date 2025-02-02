@@ -2,9 +2,12 @@
 /*
 The body tag should have the following styles
 ## The font family should be Arial and sans-serif
-## Margin and padding should be set to
+## Margin and padding should be set to an appropriate value
 */
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 8px 0;
+}
 /* Header Styles: A fixed section at the top */
 /*
 The header class should include the following styles
@@ -13,14 +16,24 @@ The header class should include the following styles
 ## Set a padding value for the header
 ## Align the header text to center
 ## Include a bottom border for the header with a colour of your choice
-*/
-
-
-/* Header font size increased */
+*//* Header font size increased */
 /*Increase the font size of h1 in the header class to 2.5 em and set the 
 margin to 0
 */
-
+.header {
+    background-color: #3cb371;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    border-bottom: 4px solid seagreen;
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+    p {
+        margin: 4px;
+    }
+}
 
 /* Navigation Bar */
 /*
@@ -31,7 +44,12 @@ The navbar class should include the following styles
 ## Add a background color of your choice
 ## Add a padding around the text (Ex: 20px)
 */
-
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #303030;
+    padding: 10px;
+}
 
 /* Navigation bar hover effect added */
 .nav-item {
