@@ -18,7 +18,63 @@
 
     * NOTE: anywhere a color is required in your rules below, you MUST use the CSS variable - no hard-coded colors are allowed
 */
-
+:root {
+    --dark-blue: #003c71;
+    --blue: #296cf6;
+    --transparent-blue: rgb(0 37 85 / 0.8);
+    --white: #ffffff;
+    --yellow: #fff400;
+}
+body {
+    margin: 0
+}
+header {
+    width: 100%;
+    background-color: var(--white);
+    .menubar, .header {
+        & ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            & li {
+                font-weight: bold;
+            }
+        }
+    }
+    .menubar {
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--dark-blue);
+        & li {
+            display: inline-block;
+            transition: background-color 500ms linear;
+            color: var(--white);
+            position:relative;
+            /*float: right;*/
+        }
+    }
+    .header {
+        margin-left: 24px;
+        .logo {
+            width: 64px;
+            height: 54px;
+        }
+        & li {
+            display: inline-block;
+            color: var(--dark-blue);
+            border-bottom: 2px solid;
+            border-bottom-color: transparent;
+            & a, & a:visited {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+}
+.header li:hover {
+    color: var(--blue);
+    border-bottom-color: var(--yellow);
+}
 /*
     HEADER STYLES
     -------------
@@ -48,7 +104,42 @@
             * TIP: to avoid the position of the element "jumping" when hovering over, apply a default
              bottom border of 2px solid transparent
 */
-
+#big-info {
+    position: relative;
+    height: 800px;
+    background-image: url(./images/bcit-big-info.png);
+    z-index: 0;
+    .overlay {
+        top: 70%;
+        left: 3%;
+        position: absolute;
+        z-index: 1;
+        color: var(--white);
+        max-width: 650px;
+        & h1 {
+            font-size: 54px;
+            font-weight: bold;
+            margin: 0 0 16px 0;
+        }
+        & p, & button {
+            font-size: 24px;
+            font-weight: 400;
+        }
+        & button {
+            border: 1px solid var(--white);
+            background: transparent;
+            color: inherit;
+            width: 310px;
+            height: 83px;
+            text-align: left;
+            padding: 1px 0 1px 30px;
+            transition: background-color 200ms ease-in;
+        }
+    }
+}
+#big-info button:hover {
+    background-color: var(--transparent-blue);
+}
 
 
 /*
@@ -70,6 +161,17 @@
         - have appropriate padding on the top, right, bottom, and left sides
         - transition to a transparent blue background on hover ( transition: background-color 200ms ease-in;)
 */
+#welcome{
+    margin-left: 24px;
+    padding: 64px 0 0 16px;
+    & h1 {
+        color: var(--dark-blue);
+        font-size: 42px;
+        font-weight: 600;
+        margin: 0 0 16px 0;
+        line-height: 1.17;
+}
+}
 
 
 
