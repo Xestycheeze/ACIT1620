@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                    "header header"
+                    "sidebar content"
+                    "footer footer";
+            /*grid-template-columns: 200px 1fr; /*splits the column width into those ratios based on screen width(default mode)*/
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-rows: 50px 1fr 50px;
+            gap: 10px;
+        }
+        .item {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+</div>
+</body>
+</html>
