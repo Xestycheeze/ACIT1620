@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Guess</title>
+    <style>
+        body { margin: 20px;}
+        img {margin: 20px;}
+    </style>
+    <script>
+        window.onload = init;
+        function init() {
+            let images = document.getElementsByTagName("img");
+            for (let i = 0; i < images.length; i++){
+                images[i].onclick = showAnswer;
+            }
+        }
+        function showAnswer(e) {
+            let img = e.target;
+            let name = img.id;
+            name = "images_Week12/" + name + ".jpg";
+            img.src = name;
+
+            setTimeout(reblur, 3000, img);
+        }
+        function reblur(image){
+            let name = image.id;
+            image.src = `./images_Week12/${name}blur.jpg`;
+        }
+
+
+    </script>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="nameInput" placeholder="enter name"/>
+        <button type="submit">submit button</button>
+    </form>
+    <p id="message"></p>
+
+    <img id="zero" src="./images_Week12/zeroblur.jpg"/>
+    <img id="one" src="./images_Week12/oneblur.jpg"/>
+    <img id="two" src="./images_Week12/twoblur.jpg"/>
+    <img id="three" src="./images_Week12/threeblur.jpg"/>
+    <img id="four" src="./images_Week12/fourblur.jpg"/>
+    <img id="five" src="./images_Week12/fiveblur.jpg"/>
+
+    <script>
+        document.getElementById("myform").addEventListener("submit", function(event){
+            let input = document.getElementById("nameInput").value;
+            if (input.trim() === ""){
+                event.preventDefault() // prevents submission, which is the default behavior of buttons
+                document.getElementById("message").textContent = "name cant be empty";
+            } else {
+                document.getElementById("message").textContent = input;
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
